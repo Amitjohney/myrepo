@@ -5,3 +5,6 @@ resources:
 replicas:
 - count: 3
   name: my-kustomization-nginx-deployment
+generatorOptions:
+  labels:
+    a=test
