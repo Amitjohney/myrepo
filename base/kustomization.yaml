@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
 - ./deployment.yaml
 replicas:
-- count: 30
+- count: 1
   name: my-kustomization-nginx-deployment
