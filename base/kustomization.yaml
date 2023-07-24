@@ -4,4 +4,4 @@ resources:
 - ./deployment.yaml
 replicas:
 - count: 3
-  name: nginx-deployment
+  name: my-kustomization-nginx-deployment
