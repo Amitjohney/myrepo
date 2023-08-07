@@ -4,4 +4,5 @@ metadata:
   name: fluxtest
 resources:
 - deployment.yaml
-replicas: 5
+patches:
+- patch.yaml
