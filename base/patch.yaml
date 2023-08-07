@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-kustomization-nginx-deployment
+  namespace: default
+  labels:
+    app: nginx
+spec:
+  replicas: 10
