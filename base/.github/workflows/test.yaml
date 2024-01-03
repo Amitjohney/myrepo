@@ -1,0 +1,8 @@
+name: demoworkflow
+on: push
+jobs:
+  mytest:
+    runs-on: ubuntu-latest
+    steps:
+    - name: test
+      run: echo "Hello" >> testfile
