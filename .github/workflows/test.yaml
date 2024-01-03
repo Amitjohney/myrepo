@@ -6,6 +6,10 @@ jobs:
   mytest:
     env:
       job_level: "This is job_level"
+    strategy:
+      matrix:
+        x: [20,50]
+        y: [90,100]
     runs-on: ubuntu-latest
     steps:
     - name: Update package
