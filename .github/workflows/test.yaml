@@ -7,7 +7,10 @@ jobs:
     - name: Update package
       run: sudo apt-get update -y
     - name: test
-      run: echo "Hello" >> testfile
+      run: | 
+        echo "Hello" >> testfile
+        sleep 10
+        echo "Sleep Done" >> testfile
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
@@ -24,4 +27,8 @@ jobs:
         name: testfile
     - name: Cat it
       run: cat testfile
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: cat test.yaml
+      run: cat test2.yaml
       
