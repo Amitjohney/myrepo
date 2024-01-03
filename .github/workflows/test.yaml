@@ -1,14 +1,22 @@
 name: demoworkflow
 on: push
+env:
+  workflow_level: "This is workflow level"
 jobs:
   mytest:
+    env:
+      job_level: "This is job_level"
     runs-on: ubuntu-latest
     steps:
     - name: Update package
       run: sudo apt-get update -y
     - name: test
       run: | 
-        echo "Hello" >> testfile
+        echo "Work flow level ${{ env.workflow_level}}" >> testfile
+        echo "Job level ${{ env.job_level}}" >> testfile
+        echo "Repositories level  ${{ vars.my_name}}" >> testfile
+        echo "Pin test ${{ secrets.my_card_pin}}" >> testfile
+
         sleep 10
         echo "Sleep Done" >> testfile
     - name: Upload artifact
@@ -16,6 +24,7 @@ jobs:
       with:
         name: testfile
         path: testfile
+    
 
   mytest2:
     runs-on: ubuntu-latest
@@ -25,7 +34,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: testfile
-    - name: Cat it
+    - name: Cat it to test different level variables
       run: cat testfile
     - name: Checkout
       uses: actions/checkout@v4
