@@ -9,7 +9,7 @@ jobs:
     - name: test
       run: echo "Hello" >> testfile
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: testfile
         path: testfile
@@ -18,7 +18,7 @@ jobs:
     needs: mytest
     steps:
     - name: Show me file content
-      uses: download-artifact
+      uses: actions/download-artifact@v3
       with:
         name: testfile
       
