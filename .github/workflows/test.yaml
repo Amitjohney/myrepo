@@ -4,7 +4,21 @@ jobs:
   mytest:
     runs-on: ubuntu-latest
     steps:
+    - name: Update package
+      run: apt-get update -y
     - name: test
       run: echo "Hello" >> testfile
-    - name: showme
-      run: cat testfile
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: testfile
+        path: testfile
+
+  mytest2:
+    needs: mytest
+    steps:
+    - name: Show me file content
+      uses: download-artifact
+      with:
+        name: testfile
+      
