@@ -4,6 +4,6 @@ metadata:
   name: my-kustomization-nginx-deployment
   namespace: default
   labels:
-    app: nginx
+    app: nginx2
 spec:
   replicas: 10
