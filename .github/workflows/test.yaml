@@ -22,4 +22,6 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: testfile
+    - name: Cat it
+      run: cat testfile
       
