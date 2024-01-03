@@ -7,6 +7,8 @@ jobs:
     env:
       job_level: "This is job_level"
     strategy:
+      fail-fast: false
+      max-parallel: 2
       matrix:
         x: [20,50]
         y: [90,100]
@@ -44,4 +46,6 @@ jobs:
       uses: actions/checkout@v4
     - name: cat test.yaml
       run: cat test2.yaml
+    - name: Display context
+      run: echo "${{ toJSON(github)}}"
       
