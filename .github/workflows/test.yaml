@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Update package
-      run: apt-get update -y
+      run: sudo apt-get update -y
     - name: test
       run: echo "Hello" >> testfile
     - name: Upload artifact
