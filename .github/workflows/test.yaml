@@ -1,7 +1,7 @@
 name: demoworkflow
 on:
-  push:
-  workflow_dispatch:
+  schedule:
+  - cron: "*/1 * * * *"
 
 env:
   workflow_level: "This is workflow level"
