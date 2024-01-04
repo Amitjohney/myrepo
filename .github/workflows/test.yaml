@@ -1,5 +1,7 @@
 name: demoworkflow
-on: push
+on:
+  workflow_dispatch:
+
 env:
   workflow_level: "This is workflow level"
 jobs:
