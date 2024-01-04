@@ -1,5 +1,6 @@
 name: demoworkflow
 on:
+  push:
   workflow_dispatch:
 
 env:
