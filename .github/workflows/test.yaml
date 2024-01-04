@@ -1,7 +1,10 @@
 name: demoworkflow
 on:
-  schedule:
-  - cron: "*/1 * * * *"
+  pull_request:
+    types:
+    - opened
+    branches:
+    - newbranch
 
 env:
   workflow_level: "This is workflow level"
