@@ -1,57 +1,14 @@
-name: demoworkflow
+name: pull_request_flow
 on: 
   pull_request:
     types:
     - opened
     branches:
-    - main
-env:
-  workflow_level: "This is workflow level"
+    - testbranch
 jobs:
-  mytest:
-    env:
-      job_level: "This is job_level"
-    strategy:
-      fail-fast: false
-      max-parallel: 2
-      matrix:
-        x: [20,50]
-        y: [90,100]
+  testscript:
     runs-on: ubuntu-latest
     steps:
-    - name: Update package
-      run: sudo apt-get update -y
-    - name: test
-      run: | 
-        echo "Work flow level ${{ env.workflow_level}}" >> testfile
-        echo "Job level ${{ env.job_level}}" >> testfile
-        echo "Repositories level  ${{ vars.my_name}}" >> testfile
-        echo "Pin test ${{ secrets.my_card_pin}}" >> testfile
-
-        sleep 10
-        echo "Sleep Done" >> testfile
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: testfile
-        path: testfile
-    
-
-  mytest2:
-    if: github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
-    needs: mytest
-    steps:
-    - name: Show me file content
-      uses: actions/download-artifact@v3
-      with:
-        name: testfile
-    - name: Cat it to test different level variables
-      run: cat testfile
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: cat test.yaml
-      run: cat test2.yaml
-    - name: Display context
-      run: echo "${{ toJSON(github)}}"
+      - name: checkoutut
+        run: echo "Hello world"
       
