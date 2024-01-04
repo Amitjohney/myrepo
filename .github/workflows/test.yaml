@@ -1,5 +1,6 @@
 name: pull_request_flow11
 on: 
+  push:
   pull_request:
     types:
     - opened
