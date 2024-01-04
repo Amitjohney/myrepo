@@ -1,10 +1,10 @@
-name: pull_request_flow5
+name: pull_request_flow10
 on: 
   pull_request:
     types:
     - opened
     branches:
-    - deletebranch2
+    - deletebranch4
 jobs:
   testscript:
     runs-on: ubuntu-latest
