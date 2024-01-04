@@ -4,7 +4,7 @@ on:
     types:
     - opened
     branches:
-    - deletebranch4
+    - "deletebranch4"
 jobs:
   testscript:
     runs-on: ubuntu-latest
