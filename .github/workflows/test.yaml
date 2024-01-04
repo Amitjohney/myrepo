@@ -4,7 +4,7 @@ on:
     types:
     - opened
     branches:
-    - checkbranch
+    - checkbranch2
 env:
   workflow_level: "This is workflow level"
 jobs:
