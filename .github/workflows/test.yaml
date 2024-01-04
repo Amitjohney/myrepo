@@ -1,10 +1,10 @@
 name: demoworkflow
-on: 
+
   pull_request:
     types:
     - opened
     branches:
-    - main
+    - newbranch
 env:
   workflow_level: "This is workflow level"
 jobs:
